@@ -4,6 +4,7 @@ from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropou
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
 # Data Preparation
+# data
 data_gen = ImageDataGenerator(rescale=1./255, validation_split=0.2)
 train_data = data_gen.flow_from_directory('dataset', target_size=(64, 64), batch_size=32, class_mode='categorical', subset='training')
 val_data = data_gen.flow_from_directory('dataset', target_size=(64, 64), batch_size=32, class_mode='categorical', subset='validation')
